@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy Lex Bot
         run: |
-          aws lex-models put-bot --name DummyLexBot --cli-input-json file://lex_bot_configuration.json
+          aws lex-models put-bot --name DummyLexBot --cli-input-json file://bot/bot-definition.json

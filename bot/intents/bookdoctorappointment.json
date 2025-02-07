@@ -1,0 +1,29 @@
+{
+    "name": "BookDoctorAppointment",
+    "sampleUtterances": [
+      { "utterance": "I want to book a doctor appointment" },
+      { "utterance": "Schedule an appointment with a doctor" },
+      { "utterance": "Book an appointment with doctor {DoctorCode}" }
+    ],
+    "slotSpecifications": {
+      "DoctorCode": {
+        "priority": 1,
+        "slotConstraint": "Required"
+      }
+    },
+    "intentConfirmationSetting": null,
+    "intentClosingSetting": {
+      "closingResponse": {
+        "messageGroups": [
+          {
+            "message": {
+              "plainTextMessage": {
+                "value": "Your appointment with doctor {DoctorCode} has been scheduled."
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+  
