@@ -1,0 +1,34 @@
+{
+    "metadata": {
+      "version": "1.0",
+      "type": "bot",
+      "name": "DoctorBookingBot"
+    },
+    "intents": [
+      {
+        "name": "BookDoctor",
+        "slots": [
+          {
+            "name": "DoctorType",
+            "type": "string",
+            "description": "Type of doctor to book (e.g., dentist, cardiologist)"
+          },
+          {
+            "name": "AppointmentDate",
+            "type": "date",
+            "description": "Date of the appointment"
+          },
+          {
+            "name": "AppointmentTime",
+            "type": "time",
+            "description": "Time of the appointment"
+          },
+          {
+            "name": "PatientName",
+            "type": "string",
+            "description": "Name of the patient"
+          }
+        ]
+      }
+    ]
+  }
