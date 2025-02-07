@@ -1,20 +1,12 @@
 name: Development Deployment
 
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Choose environment (dev, stage, prod)'
-        required: true
-        default: 'dev'
-        type: choice
-        options:
-          - dev
-          - stage
-          - prod
+on: [push, pull_request]
+    
 
 jobs:
+
   trigger-deployment:
     uses: ./.github/workflows/deployment.yml
     with:
-      environment: ${{ inputs.environment }}
+      environment: dev
+      aws_role_to_assume: arn:aws:iam::438465155677:oidc-provider/token.actions.githubusercontent.com
