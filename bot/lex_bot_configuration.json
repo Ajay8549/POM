@@ -1,6 +1,8 @@
 {
   "name": "DummyLexBot",
   "description": "A dummy Lex bot for demonstration purposes.",
+  "locale": "en-US",
+  "childDirected": false,
   "intents": [
     {
       "name": "GreetingIntent",
