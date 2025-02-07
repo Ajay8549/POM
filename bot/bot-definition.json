@@ -1,9 +1,0 @@
-{
-    "name": "DummyBot",
-    "description": "A dummy Amazon Lex bot for testing",
-    "roleArn": "arn:aws:iam::123456789012:role/LexBotRole",
-    "dataPrivacy": { "childDirected": false },
-    "idleSessionTTLInSeconds": 300,
-    "botTags": { "environment": "dev" }
-  }
-  

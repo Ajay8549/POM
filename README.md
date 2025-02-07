@@ -1,24 +1,18 @@
-Lex-bot-project
-     .github/
-         workflows/
-                dev-deployment.yml  # Provides input values
-                deployment.yml       # Main deployment workflow
-                security.yml         # Security checks
-                actions/             # Custom actions if needed
-                     setup-env.yml   # Reusable workflow for setting up environments
-                     run-tests.yml   # Reusable workflow for running tests
-bot/
-   bot-definition.json
-   intents/
-        Greetingintent.json
-        bookdoctorappointment.json
-   slots/
-        doctorcode.json
-tests/
-sonar-project.properties
-.gitignore
-Readme.md
-package.json
-requirements.txt
-Dockerfile
-jfrogconfig.yml 
+/lex-bot-pipeline
+│── .github/
+│   ├── workflows/
+│   │   ├── build.yml
+│   │   ├── security.yml
+│   │   ├── deploy.yml
+│── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   ├── providers.tf
+│   ├── modules/
+│── src/
+│   ├── bot-definition.json
+│── sonar-project.properties
+│── .pre-commit-config.yaml
+│── .gitignore
+│── README.md
