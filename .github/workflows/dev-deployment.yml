@@ -9,4 +9,3 @@ jobs:
     uses: ./.github/workflows/deployment.yml
     with:
       environment: dev
-      aws_role_to_assume: arn:aws:iam::438465155677:oidc-provider/token.actions.githubusercontent.com
