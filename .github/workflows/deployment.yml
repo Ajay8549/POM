@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - poc-tf-method
 
 jobs:
   deploy:
