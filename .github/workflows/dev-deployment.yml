@@ -6,6 +6,9 @@ on: [push, pull_request]
 jobs:
 
   trigger-deployment:
+    permissions:
+      id-token: write
+      contents: read  
     uses: ./.github/workflows/deployment.yml
     with:
       environment: dev
