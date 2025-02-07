@@ -1,0 +1,15 @@
+{
+    "name": "GreetingIntent",
+    "sampleUtterances": [
+      { "utterance": "Hello" },
+      { "utterance": "Hi" },
+      { "utterance": "Hey there" }
+    ],
+    "intentConfirmationSetting": null,
+    "intentClosingSetting": {
+      "closingResponse": {
+        "messageGroups": [{ "message": { "plainTextMessage": { "value": "Hello! How can I assist you?" } } }]
+      }
+    }
+  }
+  

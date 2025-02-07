@@ -1,0 +1,20 @@
+name: Development Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose environment (dev, stage, prod)'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - stage
+          - prod
+
+jobs:
+  trigger-deployment:
+    uses: ./.github/workflows/deployment.yml
+    with:
+      environment: ${{ inputs.environment }}

@@ -1,0 +1,19 @@
+{
+    "name": "DoctorCode",
+    "slotTypeName": "AMAZON.AlphaNumeric",
+    "slotConstraint": "Required",
+    "valueElicitationSetting": {
+      "promptSpecification": {
+        "messageGroups": [
+          {
+            "message": {
+              "plainTextMessage": {
+                "value": "Please provide the doctor's code to proceed."
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+  
