@@ -1,28 +1,53 @@
-name: Deploy Amazon Lex Bot
+name: Deploy Lex Bot
 
 on:
-  workflow_call:
-    inputs:
-      environment:
-        required: true
-        type: string
+  push:
+    branches:
+      - main
+      - poc-tf-method
 
 jobs:
-  setup:
+  lint:
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Lint code
+        uses: github/super-linter@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_EXCLUDE: .*.yml
+          VALIDATE_CHECKOV: false
+          ESLINT_USE_FLAT_CONFIG: false
+
+  deploy:
+    runs-on: ubuntu-latest
+
     permissions:
       id-token: write
       contents: read
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
 
-      - name: Setup AWS Credentials (OIDC)
-        uses: aws-actions/configure-aws-credentials@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::438465155677:oidc-provider/token.actions.githubusercontent.com
+          role-to-assume: arn:aws:iam::438465155677:role/aj-git-OIDC
           aws-region: us-east-1
+
+      - name: Install AWS CLI
+        run: |
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install --update
+  
 
       - name: Deploy Lex Bot
         run: |
-          aws lexv2-models create-bot --cli-input-json file://bot/bot-definition.json
+          aws lex-models put-bot --name DummyLexBot --cli-input-json file://bot/lex_bot_configuration.json
