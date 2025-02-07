@@ -1,0 +1,75 @@
+{
+  "name": "DummyLexBot",
+  "description": "A dummy Lex bot for demonstration purposes.",
+  "intents": [
+    {
+      "name": "GreetingIntent",
+      "sampleUtterances": [
+        "Hello",
+        "Hi",
+        "Hey"
+      ],
+      "slots": [],
+      "fulfillmentActivity": {
+        "type": "ReturnIntent"
+      }
+    },
+    {
+      "name": "BookAppointmentIntent",
+      "sampleUtterances": [
+        "I want to book an appointment",
+        "Schedule an appointment for me"
+      ],
+      "slots": [
+        {
+          "name": "Date",
+          "slotType": "AMAZON.DATE",
+          "slotConstraint": "Required",
+          "valueElicitationPrompt": {
+            "messages": [
+              {
+                "contentType": "PlainText",
+                "content": "What date would you like to book the appointment for?"
+              }
+            ],
+            "maxAttempts": 2
+          }
+        },
+        {
+          "name": "Time",
+          "slotType": "AMAZON.TIME",
+          "slotConstraint": "Required",
+          "valueElicitationPrompt": {
+            "messages": [
+              {
+                "contentType": "PlainText",
+                "content": "What time would you like to book the appointment for?"
+              }
+            ],
+            "maxAttempts": 2
+          }
+        }
+      ],
+      "fulfillmentActivity": {
+        "type": "ReturnIntent"
+      }
+    }
+  ],
+  "clarificationPrompt": {
+    "messages": [
+      {
+        "contentType": "PlainText",
+        "content": "Sorry, can you please repeat that?"
+      }
+    ],
+    "maxAttempts": 2
+  },
+  "abortStatement": {
+    "messages": [
+      {
+        "contentType": "PlainText",
+        "content": "Sorry, I could not understand. Goodbye."
+      }
+    ]
+  }
+}
