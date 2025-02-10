@@ -1,5 +1,5 @@
 {
-    "botName": "DummyBot",
+    "botName": "DummyBot1",
     "description": "A dummy Amazon Lex bot for testing",
     "roleArn": "arn:aws:iam::438465155677:role/aj-git-OIDC",
     "dataPrivacy": { "childDirected": false },
