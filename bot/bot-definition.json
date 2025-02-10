@@ -2,10 +2,10 @@
     "botName": "DummyBot1",
     "description": "A dummy Amazon Lex bot for testing",
     "roleArn": "arn:aws:iam::438465155677:role/aj-git-OIDC",
-   // "dataPrivacy": { "childDirected": false },
-   // "idleSessionTTLInSeconds": 300,
-   // "botTags": { "environment": "dev" }
-   "intents": [
+    "dataPrivacy": { "childDirected": false },
+    "idleSessionTTLInSeconds": 300,
+    "botTags": { "environment": "dev" },
+    "intents": [
     {
       "name": "Greetingintent",
       "sampleUtterances": ["Hello","Hi there"],
