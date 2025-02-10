@@ -20,7 +20,7 @@ jobs:
       - name: Setup AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::438465155677:oidc-provider/token.actions.githubusercontent.com
+          role-to-assume: arn:aws:iam::438465155677:role/aj-git-OIDC
           aws-region: us-east-1
 
       - name: Deploy Lex Bot
