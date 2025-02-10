@@ -2,8 +2,27 @@
     "botName": "DummyBot1",
     "description": "A dummy Amazon Lex bot for testing",
     "roleArn": "arn:aws:iam::438465155677:role/aj-git-OIDC",
-    "dataPrivacy": { "childDirected": false },
-    "idleSessionTTLInSeconds": 300,
-    "botTags": { "environment": "dev" }
+   // "dataPrivacy": { "childDirected": false },
+   // "idleSessionTTLInSeconds": 300,
+   // "botTags": { "environment": "dev" }
+   "intents": [
+    {
+      "name": "Greetingintent",
+      "sampleUtterances": ["Hello","Hi there"],
+      "response": "Hello! How can i assist you today?"
+    },
+    {
+      "name": "BookDoctorAppointment",
+      "sampleUtterances": ["I need to book a doctor"],
+      "response": "Sure! Which doctor fo you want to book?",
+      "slots": [
+        {
+          "name":"doctorCode",
+          "description": "A slot for doctor selection",
+          "Values": ["Genereal Physician", "Dentist", "Orthopedic"]
+        }
+      ]
+    }
+   ]
   }
   

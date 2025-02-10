@@ -40,3 +40,6 @@ jobs:
       - name: Deploy Lex Bot
         run: |
           aws lexv2-models create-bot --cli-input-json file://bot/bot-definition.json
+          aws lexv2-models create-intent --cli-input-json file://bot/intents/Greetingintent.json
+          aws lexv2-models create-intent --cli-input-json file://bot/intents/bookdoctorappointment.json
+          aws lexv2-models create-slot-type --cli-input-json file://bot/slots/doctorcode.json
