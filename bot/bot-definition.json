@@ -6,6 +6,6 @@
     "idleSessionTTLInSeconds": 300,
     "botTags": { "environment": "dev" },
     "locale": "en-US",
-    "voice_id": "Joanna",
+    "voice_id": "Joanna"
   }
   
