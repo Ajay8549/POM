@@ -11,4 +11,7 @@ jobs:
       contents: read  
     uses: ./.github/workflows/deployment.yml
     with:
+      aws_region: us-east-1
       environment: dev
+     # role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
+      role-to-assume: 

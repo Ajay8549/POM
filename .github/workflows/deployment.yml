@@ -6,6 +6,12 @@ on:
       environment:
         required: true
         type: string
+      role-to-assume:
+        required: true
+        type: string
+      aws_region:
+        required: true
+        type: string
 
 jobs:
   setup:
@@ -16,27 +22,12 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      - name: Lint Check
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install flake8
-
-      - name: Run Linter
-        run: |
-          flake8 .
           
       - name: Setup AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::438465155677:role/aj-git-OIDC
-          aws-region: us-east-1
-
+          role-to-assume: ${{ inputs.role-to-assume }}
+          aws-region: ${{ inputs.aws_region }}
       - name: Deploy Lex Bot
         run: |
           aws lexv2-models create-bot --cli-input-json file://bot/bot-definition.json
