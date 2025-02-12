@@ -14,4 +14,4 @@ jobs:
       aws_region: us-east-1
       environment: dev
      # role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
-      role-to-assume: 
+      role-to-assume: arn:aws:iam::438465155677:role/aj-git-OIDC
